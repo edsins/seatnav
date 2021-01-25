@@ -1,0 +1,160 @@
+<style>
+    .reserve{
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background-color: green;
+    margin-bottom: 12px;
+    color:white;
+    cursor: pointer;
+    text-align: center;
+    font-size:small;
+    transform: rotate(90deg);
+    
+        
+    }
+    .nonreserve{
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background: linear-gradient(to top, #347bbe,#347bbe, #347bbe, #347bbe, #215483,#215483,  #0c3153);
+    margin-bottom: 12px;
+    color:white;
+    cursor: pointer;
+    text-align: center;
+    font-size:small;
+    transform: rotate(90deg);
+    font-weight: 600;
+  
+    }
+
+.airplane {
+  display: flex;
+  position: absolute;
+  margin-left: 350px;
+  top: -40%;
+
+  transform: translate(50%, 50%);
+  padding: 195px;
+  padding-top: 350px;
+  
+  background-image: url("../../assets/airbus.png");
+  background-position: center;
+  width:700px;
+  height:1515px;
+  transform: rotate(-90deg);
+  
+}
+
+.airplane-seats {
+  
+  display: flex;
+  
+}
+
+
+.right {
+  margin-left: 60px;
+}  
+  .airplane-row {
+   
+    margin: 0 7px;
+  }
+
+ .btt{
+   margin-top:800px;
+   
+ }
+ .but
+ {
+  width:100%;
+  color:white;
+  font-size: large;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+ 
+ }
+ .submit{
+   background-color: #4c74af;
+ }
+ .cancel{
+   background-color: rgb(151, 133, 133);
+ }
+
+</style>
+
+
+<div class="btt"> 
+  <div>
+      <button class="but submit" type="submit">Continue</button>
+  </div>
+  <div>
+      <button class="but cancel">Cancel</button>
+  </div>
+</div>  
+<div class="airplane">
+  
+  
+    <div class="airplane-seats">
+              <div class="airplane-row">
+                        <div *ngFor="let s of row1; " [class]="classl[value][s.id]" (click)="reserve(value,s.id)">
+                            <span class="sn">{{s.seatnumber}}</span>
+                        </div>
+              </div>
+
+              <div class="airplane-row">
+                        <div *ngFor="let s of row2; " [class]="classl[value][s.id]" (click)="reserve(value,s.id)">
+                      
+                      
+                            <span class="sn">{{s.seatnumber}}</span>
+                        </div>
+              </div>
+
+              <div class="airplane-row">
+                        <div *ngFor="let s of row3; " [class]="classl[value][s.id]" (click)="reserve(value,s.id)">
+                          
+                            <span class="sn">{{s.seatnumber}}</span>
+                        
+                        </div>
+                      
+              </div>
+    </div>  
+  
+  
+    <div class="airplane-seats right">
+              <div class="airplane-row">
+                              <div *ngFor="let s of row4; " [class]="classl[value][s.id]" (click)="reserve(value,s.id)">
+                                
+                                  <span class="sn">{{s.seatnumber}}</span>
+                              
+                              </div>
+
+              </div>
+  
+              <div class="airplane-row">
+                          <div *ngFor="let s of row5; " [class]="classl[value][s.id]" (click)="reserve(value,s.id)">
+                            
+                              <span class="sn">{{s.seatnumber}}</span>
+                          
+                          </div>
+
+              </div>
+  
+              <div class="airplane-row">
+                          <div *ngFor="let s of row6; " [class]="classl[value][s.id]" (click)="reserve(value,s.id)">
+                            
+                              <span class="sn">{{s.seatnumber}}</span>
+                        
+                          </div>
+
+              </div>
+  
+      
+      </div>
+      
+  </div>
+  
